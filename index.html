@@ -114,9 +114,9 @@
   <p id="message" class="typing"></p>
 
   <div id="mainOptions">
-    <button onclick="window.location.href='abouther.html'">About Her 💚</button>
+    <button onclick="window.location.href='abouther.html'">About Her 🤍</button>
     <button onclick="window.location.href='game.html'">Play Love Game 💚</button>
-    <button onclick="window.location.href='wish.html'">Birthday Wish 💌</button>
+    <button onclick="window.location.href='wish.html'">Send Her A Birthday Wish 💌</button>
     <button onclick="openSecret()">Secret 💖</button>
   </div>
 
@@ -126,7 +126,13 @@
     <button onclick="check()">Unlock</button>
     <div id="secretContent" style="display:none; margin-top:20px;">
       <img src="special.jpg" style="width:90%; max-width:300px; border-radius:12px;">
-      <p>I love you forever 💖 — Shubhamay</p>
+      <p>Hey love ❤️</br>
+I just wanted to tell you how much you mean to me.</br>
+Your smile, your voice, the way you understand me even without words — makes my world feel so much brighter.</br>
+Being with you feels like home, like I’ve found a place where I truly belong.</br>
+No matter what happens, I want you to know that I’m always here for you, standing by your side, loving you more with each passing day.</br>
+You’re not just my girlfriend, you’re my peace, my happiness, and my favorite person in this entire world. I’m so lucky to have you.</br>
+I love you, always. ---Your loving Shubhamay 💖</p>
     </div>
   </div>
 
@@ -139,7 +145,7 @@ function start(){
   music.play();
 
   typeText("title","Happy Birthday Priyatama 💚",100);
-  typeText("message","Happy Birthday! 🎉 Wishing you a magical year ahead 💖",50);
+  typeText("message","Happy Birthday! 🎉 Wishing you a magical year ahead. Keep shining 💖",50);
 }
 
 function typeText(elementId, text, speed=100){
@@ -166,7 +172,7 @@ setInterval(()=>{
 // Secret
 function openSecret(){ secret.style.display="block"; }
 function check(){
-  if(code.value==""){ document.getElementById("secretContent").style.display="block"; }
+  if(code.value=="shupri"){ document.getElementById("secretContent").style.display="block"; }
   else{ alert("Wrong 💔"); }
 }
 </script>
