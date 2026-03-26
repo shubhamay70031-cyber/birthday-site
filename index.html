@@ -1,65 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Happy Birthday Priyatama 💚</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin:0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg,#0f2027,#2e8b57,#a8e063);
-      background-size: 200% 200%;
-      animation: gradientMove 10s ease infinite;
-      color:white;
-      text-align:center;
-      overflow-x:hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Priyatama 💚</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#0f2027,#2e8b57,#a8e063);
+    background-size: 200% 200%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+  }
 
-    @keyframes gradientMove {
-      0% { background-position:0% 50%; }
-      50% { background-position:100% 50%; }
-      100% { background-position:0% 50%; }
-    }
+  @keyframes gradientMove {
+    0% { background-position:0% 50%; }
+    50% { background-position:100% 50%; }
+    100% { background-position:0% 50%; }
+  }
 
-    #intro{
-      position:fixed; width:100%; height:100%; background:black;
-      display:flex; justify-content:center; align-items:center;
-      font-size:5vw; cursor:pointer; padding:10px;
-      text-align:center;
-    }
+  #intro{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+  }
 
-    .container{ padding:5vw; display:none; }
+  .container{
+    padding: 5%;
+    display: none;
+    max-width: 600px;
+    margin: auto;
+  }
 
-    h1{ font-size:8vw; margin:2vh 0; word-wrap:break-word; }
-    p{ font-size:4.5vw; margin:2vh 0; max-width:90%; margin-left:auto;margin-right:auto; word-wrap:break-word; }
+  h1{
+    font-size: 32px;
+    margin: 20px 0 10px;
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
 
-    button{
-      width:90%; max-width:300px; margin:2vh auto;
-      padding:12px; border:none; border-radius:25px;
-      background:white; color:#2e8b57; font-weight:bold;
-      cursor:pointer; transition:0.3s; display:block;
-      font-size:4.5vw;
-    }
-    button:hover{ transform:scale(1.05); }
+  p{
+    font-size: 18px;
+    margin: 10px 0 20px;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
 
-    #countdown{ font-size:5vw; margin:2vh 0; }
+  button{
+    width: 90%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #2e8b57;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    font-size: 16px;
+  }
 
-    #secret{ display:none; margin-top:2vh; }
-    #secret input{
-      padding:10px; border-radius:10px; border:none; width:70%; max-width:250px;
-      margin-bottom:1vh; font-size:4vw;
-    }
+  button:hover{ transform: scale(1.05); }
 
-    .typing { border-right:2px solid white; white-space:nowrap; overflow:hidden; }
+  #countdown{ font-size: 18px; margin: 10px 0; }
 
-    @media screen and (max-width: 480px){
-      h1{ font-size:7vw; }
-      p{ font-size:4vw; }
-      button{ font-size:4vw; padding:10px; }
-      #countdown{ font-size:4.5vw; }
-      #intro{ font-size:6vw; }
-    }
-  </style>
+  #secret{ display: none; margin-top: 20px; }
+  #secret input{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 70%;
+    max-width: 250px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .typing { border-right: 2px solid white; white-space: normal; display: inline-block; overflow: hidden; }
+
+  @media screen and (max-width: 480px){
+    h1{ font-size: 24px; }
+    p{ font-size: 16px; }
+    button{ font-size: 14px; padding: 10px; }
+    #countdown{ font-size: 16px; }
+    #intro{ font-size: 5vw; }
+  }
+</style>
 </head>
 <body>
 
@@ -86,7 +124,7 @@
   <div id="secret">
     <input type="password" id="code" placeholder="Enter secret code 💖">
     <button onclick="check()">Unlock</button>
-    <div id="secretContent" style="display:none; margin-top:2vh;">
+    <div id="secretContent" style="display:none; margin-top:20px;">
       <img src="special.jpg" style="width:90%; max-width:300px; border-radius:12px;">
       <p>I love you forever 💖 — Shubhamay</p>
     </div>
@@ -100,12 +138,10 @@ function start(){
   main.style.display="block";
   music.play();
 
-  // Typing animation
   typeText("title","Happy Birthday Priyatama 💚",100);
   typeText("message","Happy Birthday! 🎉 Wishing you a magical year ahead 💖",50);
 }
 
-// Typing function
 function typeText(elementId, text, speed=100){
   let i = 0;
   const el = document.getElementById(elementId);
