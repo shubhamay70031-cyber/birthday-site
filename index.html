@@ -1,90 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Happy Birthday ❤️</title>
+  <title>Happy Birthday Priyatama 💚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
-      margin: 0;
+      margin:0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #2e8b57, #a8e063);
-      color: white;
-      text-align: center;
-      overflow-x: hidden;
+      background: linear-gradient(135deg,#0f2027,#2e8b57,#a8e063);
+      background-size: 200% 200%;
+      animation: gradientMove 10s ease infinite;
+      color:white;
+      text-align:center;
+      overflow-x:hidden;
     }
 
-    .container { display:none; padding:20px; }
-
-    h1 { font-size: 28px; }
-
-    button {
-      width: 80%;
-      max-width: 300px;
-      margin: 10px auto;
-      padding: 12px;
-      border-radius: 20px;
-      border:none;
-      background:white;
-      color:#2e8b57;
+    @keyframes gradientMove {
+      0% { background-position:0% 50%; }
+      50% { background-position:100% 50%; }
+      100% { background-position:0% 50%; }
     }
 
-    img {
-      width: 80%;
-      max-width: 260px;
-      border-radius: 12px;
-      margin-top:10px;
+    #intro{
+      position:fixed; width:100%; height:100%; background:black;
+      display:flex; justify-content:center; align-items:center;
+      font-size:22px; cursor:pointer;
     }
 
-    .section { display:none; }
+    .container{ padding:20px; display:none; }
+    h1{ font-size:35px; margin:10px 0; }
+    p{ font-size:18px; margin:10px 0; max-width:600px; margin-left:auto;margin-right:auto; }
 
-    /* Intro */
-    #intro {
-      position:fixed;
-      width:100%;
-      height:100%;
-      background:black;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:22px;
-      z-index:999;
+    button{
+      width:80%; max-width:300px; margin:10px auto;
+      padding:12px; border:none; border-radius:25px;
+      background:white; color:#2e8b57; font-weight:bold;
+      cursor:pointer; transition:0.3s;
+      display:block;
     }
+    button:hover{ transform:scale(1.05); }
 
-    /* 🎮 Falling Game */
-    .fall {
-      position: fixed;
-      top: -20px;
-      font-size: 22px;
-      cursor: pointer;
-      animation: fall 4s linear;
-    }
+    #countdown{ font-size:20px; margin:10px 0; }
 
-    @keyframes fall {
-      to { transform: translateY(110vh); }
-    }
+    #secret{ display:none; margin-top:20px; }
+    #secret input{ padding:8px; border-radius:10px; border:none; width:70%; max-width:250px; margin-bottom:10px; }
 
-    /* Particles */
-    .particle {
-      position:fixed;
-      bottom:0;
-      background:#a8e063;
-      border-radius:50%;
-      animation: float 6s linear infinite;
-    }
-
-    @keyframes float {
-      to { transform: translateY(-100vh); }
-    }
-
-    #fireworks { display:none; margin-top:20px; }
-
+    /* Typing effect */
+    .typing { border-right:2px solid white; white-space:nowrap; overflow:hidden; }
   </style>
 </head>
-
 <body>
 
-<div id="intro" onclick="start()">Tap to open your surprise 💚</div>
+<div id="intro" onclick="start()">📱 Tap to start 💚</div>
 
 <audio id="music" loop>
   <source src="your-song.mp3">
@@ -92,126 +59,75 @@
 
 <div class="container" id="main">
 
-<h1>Happy Birthday Priyatama 💚</h1>
-<h2 id="countdown"></h2>
+  <h1 id="title" class="typing"></h1>
+  <h2 id="countdown"></h2>
+  <p id="message" class="typing"></p>
 
-<p>You are my happiness 💖</p>
+  <div id="mainOptions">
+    <button onclick="window.location.href='abouther.html'">About Her 💚</button>
+    <button onclick="window.location.href='game.html'">Play A Game 🤍</button>
+    <button onclick="window.location.href='wish.html'">Send Her Birthday Wish 💌</button>
+    <button onclick="openSecret()">Secret 💖</button>
+  </div>
 
-<!-- 📸 Memories -->
-<button onclick="show('m1')">Memory 1</button>
-<button onclick="show('m2')">Memory 2</button>
+  <!-- SECRET -->
+  <div id="secret">
+    <input type="password" id="code" placeholder="Enter secret code 💖">
+    <button onclick="check()">Unlock</button>
+    <div id="secretContent" style="display:none;">
+      <img src="special.jpg" style="width:90%; max-width:300px; border-radius:12px;">
+      <p>Hey love ❤️</br>
 
-<div id="m1" class="section"><img src="photo1.jpg"></div>
-<div id="m2" class="section"><img src="photo2.jpg"></div>
-
-<!-- 🎮 Falling Game -->
-<button onclick="startGame()">Play Love Game 💚</button>
-<p id="scoreText"></p>
-
-<!-- 🔒 Secret -->
-<button onclick="openSecret()">Secret 💌</button>
-<div id="secret" style="display:none;">
-  <input type="password" id="code" placeholder="Enter code">
-  <button onclick="check()">Unlock</button>
-  <p id="msg" style="display:none;">I love you forever 💖</p>
-</div>
-
-<div id="fireworks">🎆 Happy Birthday My Love 🎂💚</div>
+I just wanted to tell you how much you mean to me.</br>
+Your smile, your voice, the way you understand me even without words — makes my world feel so much brighter.</br>
+Being with you feels like home, like I’ve found a place where I truly belong.</br>
+No matter what happens, I want you to know that I’m always here for you, standing by your side, loving you more with each passing day.</br>
+You’re not just my girlfriend, you’re my peace, my happiness, and my favorite person in this entire world. I’m so lucky to have you.</br>
+I love you, always. ---Your loving Shubhamay 💖</p>
+    </div>
+  </div>
 
 </div>
 
 <script>
-
 function start(){
   intro.style.display="none";
   main.style.display="block";
   music.play();
+
+  // Typing effect
+  typeText("title","Happy Birthday Priyatama 💚",100);
+  typeText("message","Happy Birthday! 🎉 Wishing you a magical year ahead. Keep shining💖",50);
 }
 
-// Countdown
-let target=new Date("March 27, 2026 00:00:00").getTime();
+// Typing function
+function typeText(elementId, text, speed=100) {
+  let i = 0;
+  const el = document.getElementById(elementId);
+  el.innerHTML = "";
+  const interval = setInterval(()=>{
+    el.innerHTML += text.charAt(i);
+    i++;
+    if(i>=text.length) clearInterval(interval);
+  }, speed);
+}
 
+// Countdown Timer
+let target = new Date("March 27, 2026 00:00:00").getTime();
 setInterval(()=>{
- let diff=target-Date.now();
- if(diff<0){
-  countdown.innerHTML="🎉 Today 💚";
-  fireworks.style.display="block";
-  return;
- }
- let h=Math.floor((diff/(1000*60*60))%24);
- let m=Math.floor((diff/(1000*60))%60);
- let s=Math.floor((diff/1000)%60);
- countdown.innerHTML=h+"h "+m+"m "+s+"s";
+  let diff = target - Date.now();
+  let h = Math.floor((diff/(1000*60*60))%24);
+  let m = Math.floor((diff/(1000*60))%60);
+  let s = Math.floor((diff/1000)%60);
+  document.getElementById("countdown").innerHTML=h+"h "+m+"m "+s+"s 💚";
 },1000);
-
-// Sections
-function show(id){
- document.querySelectorAll('.section').forEach(e=>e.style.display='none');
- document.getElementById(id).style.display='block';
-}
-
-// 🎮 Falling Game
-let score=0;
-let gameInterval;
-
-function startGame(){
- score=0;
- scoreText.innerHTML="Score: 0 💚";
-
- if(gameInterval) clearInterval(gameInterval);
-
- gameInterval=setInterval(()=>{
-  let item=document.createElement("div");
-  item.className="fall";
-
-  let good=Math.random()>0.3;
-
-  item.innerHTML = good ? "💚" : "💔";
-
-  item.style.left=Math.random()*90+"vw";
-
-  document.body.appendChild(item);
-
-  item.onclick=()=>{
-    if(good){
-      score++;
-    } else {
-      score--;
-    }
-
-    scoreText.innerHTML="Score: "+score+" 💚";
-    item.remove();
-
-    if(score>=10){
-      scoreText.innerHTML="💖 You win! I love you!";
-      clearInterval(gameInterval);
-    }
-  };
-
-  setTimeout(()=>item.remove(),4000);
-
- },800);
-}
 
 // Secret
 function openSecret(){ secret.style.display="block"; }
-
 function check(){
- if(code.value=="2703"){
-  msg.style.display="block";
- } else alert("Wrong 💔");
+  if(code.value=="shupri"){ document.getElementById("secretContent").style.display="block"; }
+  else{ alert("Wrong 💔"); }
 }
-
-// Particles
-setInterval(()=>{
- let p=document.createElement("div");
- p.className="particle";
- p.style.left=Math.random()*100+"vw";
- p.style.width=p.style.height=(Math.random()*10+5)+"px";
- document.body.appendChild(p);
- setTimeout(()=>p.remove(),6000);
-},300);
-
 </script>
 
 </body>

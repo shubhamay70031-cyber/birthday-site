@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Game 💚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin:0;
+      font-family: Arial;
+      text-align:center;
+      background: linear-gradient(135deg,#718395,#a8e063);
+      color:white;
+    }
+
+    #gameArea {
+      position: relative;
+      width:100%;
+      height:70vh;
+      overflow:hidden;
+    }
+
+    .fall {
+      position:absolute;
+      top:-20px;
+      font-size:24px;
+      cursor:pointer;
+      animation: fall 3s linear;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(80vh); }
+    }
+
+    button {
+      padding:10px;
+      border-radius:10px;
+      border:none;
+      margin:10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>💚 Love Game 💚</h2>
+
+<button onclick="goBack()">⬅ Back</button>
+
+<h3 id="timer"></h3>
+<h3 id="score">Score: 0</h3>
+
+<div id="gameArea"></div>
+
+<script>
+
+let score=0;
+let time=60;
+
+function goBack(){
+  window.location.href="index.html";
+}
+
+let timerInterval=setInterval(()=>{
+ time--;
+ timer.innerHTML="Time: "+time+"s";
+
+ if(time<=0){
+  clearInterval(timerInterval);
+  clearInterval(fallInterval);
+  alert("Game Over 💚 Your Score: "+score);
+ }
+},1000);
+
+let fallInterval=setInterval(()=>{
+ let item=document.createElement("div");
+ item.className="fall";
+
+ let good=Math.random()>0.3;
+ item.innerHTML=good?"💚":"💔";
+
+ item.style.left=Math.random()*90+"vw";
+
+ gameArea.appendChild(item);
+
+ item.onclick=()=>{
+  if(good) score++;
+  else score--;
+
+  document.getElementById("score").innerHTML="Score: "+score;
+  item.remove();
+ };
+
+ setTimeout(()=>item.remove(),3000);
+
+},500);
+
+</script>
+
+</body>
+</html>

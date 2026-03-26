@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Send Wishes 💌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin:0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg,#2e8b57,#e063b0);
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    h1 {
+      margin-top:20px;
+    }
+
+    input, textarea {
+      width:80%;
+      max-width:300px;
+      padding:10px;
+      margin:10px;
+      border:none;
+      border-radius:10px;
+    }
+
+    button {
+      padding:10px 20px;
+      border:none;
+      border-radius:20px;
+      background:white;
+      color:#2e8b57;
+      margin:10px;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    button:hover {
+      transform:scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>💌 Birthday Wish to Priyatama 💚</h1>
+
+<p>Write something beautiful for her 💖</p>
+
+<input id="name" placeholder="Your Name 💚"><br>
+<textarea id="message" placeholder="Your Message 💖"></textarea><br>
+
+<button onclick="sendMsg()">Send 💌</button>
+<button onclick="goBack()">⬅ Back</button>
+
+<script>
+function goBack(){
+  window.location.href="index.html"; // Return to main page
+}
+
+function sendMsg(){
+  let name = document.getElementById("name").value;
+  let message = document.getElementById("message").value;
+
+  if(name && message){
+    // ✅ Google Form submission URL with correct entry IDs
+    let url = "https://docs.google.com/forms/d/e/1FAIpQLScdIbkhvSQ6ePXMdW89tHdUCObzMsYIloRSh4pXQATGlJ95Sw/formResponse?" +
+      "entry.92150583=" + encodeURIComponent(name) +
+      "&entry.2064014659=" + encodeURIComponent(message);
+
+    // Open form submission in new tab (silent submission)
+    window.open(url, "_blank");
+
+    alert("💚 Thank you for your lovely message!");
+
+    // Clear fields after sending
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+
+  } else {
+    alert("Please fill both fields 💚");
+  }
+}
+</script>
+
+</body>
+</html>

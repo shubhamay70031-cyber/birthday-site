@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Priyatama 💚</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#a8e063,#8b2e77);
+    color:white;
+    text-align:center;
+    margin:0;
+    padding:10px;
+  }
+
+  h1{
+    margin:20px 0;
+    font-size:30px;
+  }
+
+  .about-btn{
+    width:90%; max-width:280px;
+    padding:12px;
+    margin:8px auto;
+    border-radius:15px;
+    font-weight:bold;
+    background:white;
+    color:#2e8b57;
+    border:none;
+    cursor:pointer;
+    display:block;
+    transition:0.3s;
+  }
+
+  .about-btn:hover{
+    background:#2e8b57;
+    color:white;
+    transform:scale(1.05);
+  }
+
+  .section{
+    display:none;
+    margin-top:15px;
+    background: rgba(255,255,255,0.1);
+    padding:10px;
+    border-radius:12px;
+  }
+
+  .img-container {
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:10px 0;
+    justify-content:center;
+  }
+
+  .img-container img {
+    width:90%;
+    max-width:300px;
+    height:auto;
+    border-radius:12px;
+  }
+
+  button.back-btn{
+    padding:10px 20px;
+    margin:20px 0;
+    border:none;
+    border-radius:20px;
+    background:white;
+    color:#2e8b57;
+    font-weight:bold;
+    cursor:pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>About Priyatama 💚</h1>
+
+<!-- 9 Sub-sections -->
+<button class="about-btn" onclick="show('m1')">Brains, Beauty, Attitude</button>
+<button class="about-btn" onclick="show('m2')">Her Power House</button>
+<button class="about-btn" onclick="show('m3')">Blood Bond, Unbreakable</button>
+<button class="about-btn" onclick="show('m4')">Study and Learing</button>
+<button class="about-btn" onclick="show('m5')">She Loves to Crochet</button>
+<button class="about-btn" onclick="show('m6')">Hostel Life Begins</button>
+<button class="about-btn" onclick="show('m7')">First Hills, Forever Memory</button>
+<button class="about-btn" onclick="show('m8')">Started here, now we’re here</button>
+
+<!-- MEMORY SECTIONS -->
+<div id="m1" class="section">
+  <div class="img-container">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+  </div>
+</div>
+
+<div id="m2" class="section">
+  <div class="img-container">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+  </div>
+</div>
+
+<div id="m3" class="section">
+  <div class="img-container">
+    <img src="photo5.jpg">
+    <img src="photo6.jpg">
+  </div>
+</div>
+
+<div id="m4" class="section">
+  <div class="img-container">
+    <img src="photo7.jpg">
+    <img src="photo8.jpg">
+  </div>
+</div>
+
+<div id="m5" class="section">
+  <div class="img-container">
+    <img src="photo9.jpg">
+    <img src="photo10.jpg">
+  </div>
+</div>
+
+<div id="m6" class="section">
+  <div class="img-container">
+    <img src="photo11.jpg">
+  </div>
+</div>
+
+<div id="m7" class="section">
+  <div class="img-container">
+    <img src="photo13.jpg">
+    <img src="photo14.jpg">
+  </div>
+</div>
+
+<div id="m8" class="section">
+  <div class="img-container">
+    <img src="photo15.jpg">
+    <img src="photo16.jpg">
+  </div>
+</div>
+
+<div id="m9" class="section">
+  <div class="img-container">
+    <img src="photo17.jpg">
+    <img src="photo18.jpg">
+  </div>
+</div>
+
+<!-- Back Button -->
+<button class="back-btn" onclick="window.location.href='index.html'">Back 💚</button>
+
+<script>
+function show(id){
+  document.querySelectorAll('.section').forEach(e=>e.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+</script>
+
+</body>
+</html>
