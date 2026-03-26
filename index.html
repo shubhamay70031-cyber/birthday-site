@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      color: #fff;
+    }
+    .container {
+      padding: 50px;
+    }
+    h1 {
+      font-size: 50px;
+    }
+    p {
+      font-size: 20px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: white;
+      color: #ff4b5c;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Happy Birthday Priyatama ❤️</h1>
+    <p>
+      My love, you are the most beautiful part of my life.  
+      Every moment with you is special.  
+      Today is your day, and I just want to say…  
+      I love you forever 💖
+    </p>
+
+    <button onclick="showMessage()">Click for Surprise 🎁</button>
+
+    <p id="surprise" style="display:none; margin-top:20px;">
+      You are my happiness, my peace, and my everything 😘
+    </p>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("surprise").style.display = "block";
+    }
+  </script>
+</body>
+</html>
