@@ -1,163 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Priyatama 💚</title>
+<title>About Her 💚</title>
 <style>
   body {
+    margin:0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#a8e063,#8b2e77);
+    background: linear-gradient(135deg,#0f2027,#2e8b57,#a8e063);
+    background-size: 200% 200%;
+    animation: gradientMove 10s ease infinite;
     color:white;
     text-align:center;
-    margin:0;
-    padding:10px;
+    overflow-x:hidden;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position:0% 50%; }
+    50% { background-position:100% 50%; }
+    100% { background-position:0% 50%; }
+  }
+
+  .container {
+    padding:5%;
+    max-width: 600px;
+    margin:auto;
   }
 
   h1{
-    margin:20px 0;
-    font-size:30px;
+    font-size:32px;
+    margin: 20px 0 10px;
+    line-height:1.2;
+    word-wrap: break-word;
   }
 
-  .about-btn{
-    width:90%; max-width:280px;
-    padding:12px;
-    margin:8px auto;
-    border-radius:15px;
-    font-weight:bold;
+  .memory-btn{
+    width: 90%;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 12px;
+    border:none;
+    border-radius:25px;
     background:white;
     color:#2e8b57;
-    border:none;
+    font-weight:bold;
+    font-size:16px;
     cursor:pointer;
     display:block;
     transition:0.3s;
   }
+  .memory-btn:hover{ transform: scale(1.05); }
 
-  .about-btn:hover{
-    background:#2e8b57;
-    color:white;
-    transform:scale(1.05);
-  }
-
-  .section{
+  .memory-section{
     display:none;
-    margin-top:15px;
-    background: rgba(255,255,255,0.1);
-    padding:10px;
+    margin-top: 20px;
+  }
+
+  .memory-section img{
+    width: 45%;
+    max-width: 150px;
+    margin: 5px;
     border-radius:12px;
   }
 
-  .img-container {
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
-    padding:10px 0;
-    justify-content:center;
-  }
+  #countdown{ font-size:18px; margin:10px 0; }
 
-  .img-container img {
-    width:90%;
-    max-width:300px;
-    height:auto;
-    border-radius:12px;
-  }
+  /* Typing effect */
+  .typing { border-right: 2px solid white; white-space: normal; display: inline-block; overflow: hidden; }
 
-  button.back-btn{
-    padding:10px 20px;
-    margin:20px 0;
-    border:none;
-    border-radius:20px;
-    background:white;
-    color:#2e8b57;
-    font-weight:bold;
-    cursor:pointer;
+  @media screen and (max-width: 480px){
+    h1{ font-size:24px; }
+    .memory-btn{ font-size:14px; padding:10px; }
+    .memory-section img{ width:45%; max-width:120px; }
+    #countdown{ font-size:16px; }
   }
 </style>
 </head>
 <body>
 
-<h1>About Priyatama 💚</h1>
+<div class="container">
+  <h1 id="title" class="typing">About Her 💚</h1>
+  <h2 id="countdown"></h2>
 
-<!-- 9 Sub-sections -->
-<button class="about-btn" onclick="show('m1')">Brains, Beauty, Attitude</button>
-<button class="about-btn" onclick="show('m2')">Her Power House</button>
-<button class="about-btn" onclick="show('m3')">Blood Bond, Unbreakable</button>
-<button class="about-btn" onclick="show('m4')">Study and Learing</button>
-<button class="about-btn" onclick="show('m5')">She Loves to Crochet</button>
-<button class="about-btn" onclick="show('m6')">Hostel Life Begins</button>
-<button class="about-btn" onclick="show('m7')">First Hills, Forever Memory</button>
-<button class="about-btn" onclick="show('m8')">Started here, now we’re here</button>
+  <!-- Memory Buttons -->
+  <button class="memory-btn" onclick="showMemory('m1')">Brains, Beauty, and a whole lot of attitude</button>
+  <button class="memory-btn" onclick="showMemory('m2')">Her power house</button>
+  <button class="memory-btn" onclick="showMemory('m3')">Blood bond, unbreakable</button>
+  <button class="memory-btn" onclick="showMemory('m4')">Home is her peace</button>
+  <button class="memory-btn" onclick="showMemory('m5')">She loves to crochet</button>
+  <button class="memory-btn" onclick="showMemory('m6')">Hostel life begins</button>
+  <button class="memory-btn" onclick="showMemory('m7')">First hills, forever memory</button>
+  <button class="memory-btn" onclick="showMemory('m8')">Our first picture</button>
+  <button class="memory-btn" onclick="window.location.href='index.html'">Back to Main 💚</button>
 
-<!-- MEMORY SECTIONS -->
-<div id="m1" class="section">
-  <div class="img-container">
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-  </div>
+  <!-- Memory Sections -->
+  <div id="m1" class="memory-section"><img src="photo1.jpg"><img src="photo2.jpg"></div>
+  <div id="m2" class="memory-section"><img src="photo3.jpg"><img src="photo4.jpg"></div>
+  <div id="m3" class="memory-section"><img src="photo5.jpg"><img src="photo6.jpg"></div>
+  <div id="m4" class="memory-section"><img src="photo7.jpg"><img src="photo8.jpg"></div>
+  <div id="m5" class="memory-section"><img src="photo9.jpg"><img src="photo10.jpg"></div>
+  <div id="m6" class="memory-section"><img src="photo11.jpg"></div>
+  <div id="m7" class="memory-section"><img src="photo13.jpg"><img src="photo14.jpg"></div>
+  <div id="m8" class="memory-section"><img src="photo15.jpg"><img src="photo16.jpg"></div>
+
 </div>
-
-<div id="m2" class="section">
-  <div class="img-container">
-    <img src="photo3.jpg">
-    <img src="photo4.jpg">
-  </div>
-</div>
-
-<div id="m3" class="section">
-  <div class="img-container">
-    <img src="photo5.jpg">
-    <img src="photo6.jpg">
-  </div>
-</div>
-
-<div id="m4" class="section">
-  <div class="img-container">
-    <img src="photo7.jpg">
-    <img src="photo8.jpg">
-  </div>
-</div>
-
-<div id="m5" class="section">
-  <div class="img-container">
-    <img src="photo9.jpg">
-    <img src="photo10.jpg">
-  </div>
-</div>
-
-<div id="m6" class="section">
-  <div class="img-container">
-    <img src="photo11.jpg">
-  </div>
-</div>
-
-<div id="m7" class="section">
-  <div class="img-container">
-    <img src="photo13.jpg">
-    <img src="photo14.jpg">
-  </div>
-</div>
-
-<div id="m8" class="section">
-  <div class="img-container">
-    <img src="photo15.jpg">
-    <img src="photo16.jpg">
-  </div>
-</div>
-
-<div id="m9" class="section">
-  <div class="img-container">
-    <img src="photo17.jpg">
-    <img src="photo18.jpg">
-  </div>
-</div>
-
-<!-- Back Button -->
-<button class="back-btn" onclick="window.location.href='index.html'">Back 💚</button>
 
 <script>
-function show(id){
-  document.querySelectorAll('.section').forEach(e=>e.style.display='none');
-  document.getElementById(id).style.display='block';
-}
+  // Typing animation for heading
+  typeText("title","About Her 💚",100);
+
+  function typeText(elementId, text, speed=100){
+    let i=0;
+    const el=document.getElementById(elementId);
+    el.innerHTML="";
+    const interval=setInterval(()=>{
+      el.innerHTML += text.charAt(i);
+      i++;
+      if(i>=text.length) clearInterval(interval);
+    }, speed);
+  }
+
+  function showMemory(id){
+    document.querySelectorAll('.memory-section').forEach(s=>s.style.display='none');
+    document.getElementById(id).style.display='block';
+  }
+
+  // Countdown Timer
+  let target = new Date("March 27, 2026 00:00:00").getTime();
+  setInterval(()=>{
+    let diff = target - Date.now();
+    let h = Math.floor((diff/(1000*60*60))%24);
+    let m = Math.floor((diff/(1000*60))%60);
+    let s = Math.floor((diff/1000)%60);
+    document.getElementById("countdown").innerHTML=h+"h "+m+"m "+s+"s 💚";
+  },1000);
 </script>
 
 </body>
